@@ -11,6 +11,8 @@ This repository contains the source code and documentation for a **vehicle perfo
 - **Braking Efficiency:** 60-0 mph stopping distance
 - **Cornering Stability:** Lateral acceleration and tire force distribution
 
+📖 [Vehicle Dynamics Model Explanation](VEHICLE_DYNAMICS.md)
+
 The project structure follows a **systematic engineering approach**, covering:
 1. **Vehicle Dynamics Modeling** – Implementing physics-based simulations.
 2. **Data Processing & Performance Analysis** – Extracting insights from real or simulated telemetry data.
