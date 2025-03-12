@@ -60,13 +60,39 @@ where:
 
 ---
 
+### 5️⃣ Tire Grip & Slip Conditions
+Tire grip and slip conditions define how the vehicle maintains control during acceleration, braking, and cornering.
+
+#### **Simplified Friction Model**
+A basic approach assumes that the maximum tire force is:
+\[
+F_{tire} = \mu F_{normal}
+\]
+where:
+- \( \mu \) = Tire-road friction coefficient
+- \( F_{normal} \) = Normal force on the tire
+
+#### **Pacejka Tire Model (Optional Advanced Model)**
+For a more detailed approach, the Pacejka "Magic Formula" is used to model tire behavior more accurately:
+\[
+F_y = D \sin(C \tan^{-1}(Bx - E(Bx - \tan^{-1}(Bx))))
+\]
+where:
+- \( F_y \) = Lateral force
+- \( B, C, D, E \) = Empirical constants based on tire characteristics
+- \( x \) = Slip angle or slip ratio
+
+These calculations are implemented in `tire_model.py` to simulate realistic tire behavior under various driving conditions.
+
+---
+
 ## 🚗 Application in Vehicle Model
-These equations are implemented in `vehicle_model.py` to compute real-time forces acting on the vehicle under different conditions. The model considers:
+These equations are implemented in `vehicle_model.py` and `tire_model.py` to compute real-time forces acting on the vehicle under different conditions. The model considers:
 - Engine force through drivetrain efficiency
 - Air resistance and rolling friction at different speeds
 - Braking force limits based on tire friction
+- Tire grip and slip conditions during cornering
 
 These calculations allow us to simulate **acceleration, braking distance, and cornering dynamics** for an SAE Baja/Formula-style vehicle.
 
-🔧 **Next Steps:** Implement tire grip & slip conditions in `tire_model.py`. 🚀
-
+🔧 **Next Steps:** Implement full simulation in `simulation.py` to test vehicle performance. 🚀
